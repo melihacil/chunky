@@ -44,7 +44,9 @@ public class PlayerMovement : MonoBehaviour
     //Bullets
     //Enemys
     //Tilemaps
-    //
+    //PowerUps
+    //Health system with donuts or other food
+    //Health will decrease with time so you'll need to eat food and avoid or kill enemies
     // Update is called once per frame
     void Update()
     {
