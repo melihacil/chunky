@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         inputH = Input.GetAxisRaw("Horizontal");
         inputV = Input.GetAxisRaw("Vertical");
 
-        Debug.Log(rb.velocity);
+        //Debug.Log(rb.velocity);
     }
 
     private void FixedUpdate()
@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         MoveHorizontal();
         MoveVertical();
         //Mathf.Clamp(rb.velocity, 0.0f,maxSpeed);
+        //Clamping velocity to avoid adding 2 maxSpeeds when moving both horizontally and vertically
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxSpeed);
     }
 
