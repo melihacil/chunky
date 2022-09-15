@@ -40,20 +40,32 @@ public class GunScript : MonoBehaviour
         angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
-        if ((angle > 90 || angle < -90) && !flipped)
+        if (angle > 90.01f || angle < -90.01f)
         {
-            Vector3 scaleTemp = transform.localScale;
+            
             if (!flipped)
-                scaleTemp.x *= -1;
-            flipped = true;
-           
+            {
+                Vector3 scaleTemp = transform.localScale;
+                //scaleTemp.x *= -1;
+                scaleTemp.y *= -1;
+                flipped = true;
 
-            transform.localScale = scaleTemp;
+                transform.localScale = scaleTemp;
+            }
             //transform.localScale *= -1;
             
         }
         else
         {
+            if (flipped)
+            {
+                Vector3 scaleTemp = transform.localScale;
+                //scaleTemp.x *= -1;
+                scaleTemp.y *= -1;
+                flipped = true;
+
+                transform.localScale = scaleTemp;
+            }
             flipped=false;
             transform.localRotation = Quaternion.Euler(0f,0f, angle);
         }
