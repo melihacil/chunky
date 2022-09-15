@@ -9,8 +9,10 @@ public class GunScript : MonoBehaviour
     Vector2 mouseDelta;
     [SerializeField] private Transform barrelPos;
     float angle;
-
-    bool flipped;
+    [SerializeField] private AudioClip gunShot;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private GameObject brass;
+     bool flipped;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,9 @@ public class GunScript : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            Instantiate(brass, transform.position,Quaternion.identity);
             GetComponent<Animator>().SetTrigger("Shoot");
+            source.Play();
         }
     }
 
