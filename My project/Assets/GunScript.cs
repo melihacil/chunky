@@ -7,7 +7,7 @@ public class GunScript : MonoBehaviour
 
     Vector2 mousePos;
     Vector2 mouseDelta;
-    [SerializeField] private GameObject gun;
+    [SerializeField] private Transform barrelPos;
     float angle;
     // Start is called before the first frame update
     void Start()
@@ -31,10 +31,13 @@ public class GunScript : MonoBehaviour
     private void RotateGun()
     {
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        difference.Normalize();
-        angle = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
+        //difference.Normalize();
+        difference.x = difference.x - barrelPos.position.x;
+        difference.y = difference.y - barrelPos.position.y;
+        angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
+        /*
         if (angle < 90 || angle < -90)
         {
             if (gameObject.transform.eulerAngles.y == 0)
@@ -46,5 +49,6 @@ public class GunScript : MonoBehaviour
                 transform.localRotation = Quaternion.Euler(180, 180, angle);
             }
         }
+        */
     }
 }
