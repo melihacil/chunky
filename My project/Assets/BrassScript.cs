@@ -17,7 +17,7 @@ public class BrassScript : MonoBehaviour
     {
         if (!firstLaunch)
         {
-            Debug.Log("Stop");
+            
             rb.AddForce(Vector2.up * upwardsForce, ForceMode2D.Impulse);
             Invoke(nameof(DestroyBrass), 5f);
             Invoke(nameof(DisableRb), 1.3f);

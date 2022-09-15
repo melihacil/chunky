@@ -12,18 +12,29 @@ public class GunScript : MonoBehaviour
     [SerializeField] private AudioClip gunShot;
     [SerializeField] private AudioSource source;
     [SerializeField] private GameObject brass;
+
+    [SerializeField] private Animator ammoAnimator;
+
      bool flipped;
     // Start is called before the first frame update
     void Start()
     {
-    
+        ammoAnimator.SetTrigger("Ammo7");
     }
+
+
+    int ammoCount = 7;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            ammoCount--;
+            if (ammoCount < 0)
+                ammoCount = 7;
+            Debug.Log(ammoCount);
+            ammoAnimator.SetTrigger("Ammo" + ammoCount);
             Instantiate(brass, transform.position,Quaternion.identity);
             GetComponent<Animator>().SetTrigger("Shoot");
             source.Play();
