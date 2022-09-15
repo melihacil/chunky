@@ -42,9 +42,12 @@ public class GunScript : MonoBehaviour
 
         if ((angle > 90 || angle < -90) && !flipped)
         {
-            flipped = true;
             Vector3 scaleTemp = transform.localScale;
-            scaleTemp.y *= -1;
+            if (!flipped)
+                scaleTemp.x *= -1;
+            flipped = true;
+           
+
             transform.localScale = scaleTemp;
             //transform.localScale *= -1;
             
