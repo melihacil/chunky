@@ -30,6 +30,10 @@ public class PlayerMovement : MonoBehaviour
     private float speedDifferenceV;
     private float accelerationRateV;
     // Start is called before the first frame update
+
+    [SerializeField] private GameObject gun;
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -63,7 +67,10 @@ public class PlayerMovement : MonoBehaviour
         //Mathf.Clamp(rb.velocity, 0.0f,maxSpeed);
         //Clamping velocity to avoid adding 2 maxSpeeds when moving both horizontally and vertically
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxSpeed);
+        //RotateGun();
     }
+
+   
 
     private void MoveVertical()
     {
