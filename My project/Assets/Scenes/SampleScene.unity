@@ -791,6 +791,7 @@ MonoBehaviour:
   gunShot: {fileID: 0}
   source: {fileID: 1271855508}
   brass: {fileID: 3940521217626947536, guid: c24bb6f98090ad44f977a8de3071a16c, type: 3}
+  ammoAnimator: {fileID: 718970034}
 --- !u!95 &1271855505
 Animator:
   serializedVersion: 4
@@ -891,7 +892,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1307cb9f27f809c43a15155ff99c372b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.373
+  m_Volume: 0
   m_Pitch: 0.88
   Loop: 0
   Mute: 0
