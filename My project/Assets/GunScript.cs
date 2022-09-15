@@ -9,6 +9,8 @@ public class GunScript : MonoBehaviour
     Vector2 mouseDelta;
     [SerializeField] private Transform barrelPos;
     float angle;
+
+    bool flipped;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,21 +36,24 @@ public class GunScript : MonoBehaviour
         //difference.Normalize();
         difference.x = difference.x - barrelPos.position.x;
         difference.y = difference.y - barrelPos.position.y;
+        difference.Normalize();
         angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
-        /*
-        if (angle < 90 || angle < -90)
+        if ((angle > 90 || angle < -90) && !flipped)
         {
-            if (gameObject.transform.eulerAngles.y == 0)
-            {
-                transform.localRotation = Quaternion.Euler(190f, 0f, -angle);
-            }
-            else if (gameObject.transform.eulerAngles.y == 180)
-            {
-                transform.localRotation = Quaternion.Euler(180, 180, angle);
-            }
+            flipped = true;
+            Vector3 scaleTemp = transform.localScale;
+            scaleTemp.y *= -1;
+            transform.localScale = scaleTemp;
+            //transform.localScale *= -1;
+            
         }
-        */
+        else
+        {
+            flipped=false;
+            transform.localRotation = Quaternion.Euler(0f,0f, angle);
+        }
+        //transform.localScale *= -1;
     }
 }
