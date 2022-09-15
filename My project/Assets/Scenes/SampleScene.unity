@@ -227,9 +227,9 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2066044841}
+  - {fileID: 1271855507}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &34585641
 Rigidbody2D:
@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 1271855505}
   - component: {fileID: 1271855504}
   m_Layer: 0
-  m_Name: GlockChunkyBoyAnim_0
+  m_Name: Glock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -499,14 +499,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271855503}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.554, y: 1.305, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.006, y: 0.236, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 253673987}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 34585640}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1866933943
 GameObject:
@@ -549,7 +549,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2066044841}
   - component: {fileID: 2066044840}
-  - component: {fileID: 2066044842}
   m_Layer: 0
   m_Name: GlockChunkyBoy
   m_TagString: Untagged
@@ -616,25 +615,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066044839}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0044, y: 0.2381, z: 0.07}
-  m_LocalScale: {x: 0.4000971, y: 0.40004227, z: 0.99826115}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.2099998, y: 0.715, z: 0.07}
+  m_LocalScale: {x: 2.0004854, y: 2.0002112, z: 0.99826115}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1866933944}
-  m_Father: {fileID: 34585640}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2066044842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066044839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df6fa0fea9f6bb49bdcedf16cc5409e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  barrelPos: {fileID: 1866933944}
