@@ -31,13 +31,18 @@ public class GunScript : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             ammoCount--;
-            if (ammoCount < 0)
-                ammoCount = 7;
+            if (ammoCount >= 0)
+            {
+                ammoAnimator.SetTrigger("Ammo" + ammoCount);
+            }              
             Debug.Log(ammoCount);
-            ammoAnimator.SetTrigger("Ammo" + ammoCount);
             Instantiate(brass, transform.position,Quaternion.identity);
             GetComponent<Animator>().SetTrigger("Shoot");
             source.Play();
+        }
+        if(Input.GetButtonDown("Reload"))
+        {
+
         }
     }
 
