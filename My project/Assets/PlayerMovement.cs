@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Need to add roll 
     //Bullets
-    //Enemys
+    //Enemies
     //Tilemaps
     //PowerUps
     //Health system with donuts or other food
@@ -75,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
         {
             verticalDirection = false;
             animator.SetTrigger("WalkDown");
+            //animator.set
         }
         else
         {
@@ -116,10 +117,6 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        if (speedV > 0)
-            animator.SetTrigger("WalkUp");
-        else if (speedV < 0)
-            animator.SetTrigger("WalkDown");
     }
 
     private void MoveHorizontal()
