@@ -266,12 +266,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputH: 0
   inputV: 0
-  maxSpeed: 10
-  acceleration: 7
-  deceleration: 7
+  maxSpeed: 5
+  acceleration: 3
+  deceleration: 3
   velocityPow: 0.9
   speedH: 0
   speedV: 0
+  animator: {fileID: 0}
   gun: {fileID: 0}
 --- !u!1 &253673986
 GameObject:
