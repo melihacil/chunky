@@ -66,28 +66,41 @@ public class PlayerMovement : MonoBehaviour
 
         //Animation states
 
-        if (inputV > 0)
+        if (inputV > 0 || ((inputH > 0 || inputH < 0) && verticalDirection))
         {
+            Debug.Log("Up");
             verticalDirection = true;
             animator.SetTrigger("WalkUp");
+            animator.SetBool("WUp", true);
+            animator.SetBool("WDown", false);
+
         }
-        else if (inputV < 0)
+        else if (inputV < 0 || ((inputH > 0 || inputH < 0) && !verticalDirection))
         {
+            Debug.Log("Down");
             verticalDirection = false;
-            animator.SetTrigger("WalkDown");
+            animator.SetBool("WUp", false);
+            animator.SetBool("WDown", true);
             //animator.set
         }
+        //No input = 0 idle situation
         else
         {
             if (verticalDirection)
+            {
+                animator.SetBool("WUp", false);
+                animator.SetBool("WDown", false);
                 animator.SetTrigger("IdleUp");
+            }
             else
+            {
+                animator.SetBool("WUp", false);
+                animator.SetBool("WDown", false);
                 animator.SetTrigger("IdleDown");
+            }
         }
-        //Debug.Log(rb.velocity.y);
-        //Debug.Log(rb.velocity.y);
 
-        //Debug.Log(rb.velocity);
+        
     }
 
     private void FixedUpdate()
