@@ -20,6 +20,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speedV;
     //[Header("Movement Horizontal")]
 
+    [Header("Animator")]
+    [SerializeField] private Animator animator;
+
+
 
     //Horizontal movement
     private float targetSpeedH;
