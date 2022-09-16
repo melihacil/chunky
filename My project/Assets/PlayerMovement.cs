@@ -65,19 +65,20 @@ public class PlayerMovement : MonoBehaviour
 
 
         //Animation states
-
+        //Running up
         if (inputV > 0 || ((inputH > 0 || inputH < 0) && verticalDirection))
         {
-            Debug.Log("Up");
+            
             verticalDirection = true;
             animator.SetTrigger("WalkUp");
             animator.SetBool("WUp", true);
             animator.SetBool("WDown", false);
 
         }
+        //Running down
         else if (inputV < 0 || ((inputH > 0 || inputH < 0) && !verticalDirection))
         {
-            Debug.Log("Down");
+            
             verticalDirection = false;
             animator.SetBool("WUp", false);
             animator.SetBool("WDown", true);

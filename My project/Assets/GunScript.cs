@@ -53,11 +53,11 @@ public class GunScript : MonoBehaviour
             {
                 ammoAnimator.SetTrigger("Ammo" + ammoCount);
                 Instantiate(brass, transform.position, Quaternion.identity);
-                Instantiate(bullet, transform.position, Quaternion.identity);
+                Instantiate(bullet, transform.position, transform.rotation);
                 GetComponent<Animator>().SetTrigger("Shoot");
                 source.Play();
             }              
-            Debug.Log(ammoCount);
+            //Debug.Log(ammoCount);
             
         }
         else if (isReloading)
