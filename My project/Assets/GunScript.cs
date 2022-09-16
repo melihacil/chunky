@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GunScript : MonoBehaviour
 {
@@ -12,14 +13,23 @@ public class GunScript : MonoBehaviour
     [SerializeField] private AudioClip gunShot;
     [SerializeField] private AudioSource source;
     [SerializeField] private GameObject brass;
-
+    [SerializeField] private Slider reloadSlider;
+    [SerializeField] private SpriteRenderer magazine;
     [SerializeField] private Animator ammoAnimator;
+    [SerializeField] private float reloadDelay;
+    private float currentDelay;
+    private bool isReloading;
+    private bool reloadInput;
+
 
      bool flipped;
     // Start is called before the first frame update
     void Start()
     {
         ammoAnimator.SetTrigger("Ammo7");
+        currentDelay = reloadDelay;
+        reloadSlider.maxValue = reloadDelay;
+        reloadSlider.value = 0;
     }
 
 
@@ -28,24 +38,50 @@ public class GunScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        reloadInput = Input.GetButtonDown("Reload");
+        if (reloadInput)
         {
+            isReloading = true;
+            magazine.enabled = false;
+        }
+        if (Input.GetButtonDown("Fire1") && !isReloading)
+        {
+            currentDelay = reloadDelay;
             ammoCount--;
             if (ammoCount >= 0)
             {
                 ammoAnimator.SetTrigger("Ammo" + ammoCount);
+                Instantiate(brass, transform.position, Quaternion.identity);
+                GetComponent<Animator>().SetTrigger("Shoot");
+                source.Play();
             }              
             Debug.Log(ammoCount);
-            Instantiate(brass, transform.position,Quaternion.identity);
-            GetComponent<Animator>().SetTrigger("Shoot");
-            source.Play();
+            
         }
-        if(Input.GetButtonDown("Reload"))
+        else if (isReloading)
         {
-
+            
+            ReloadFunction();
         }
+
     }
 
+    private void ReloadFunction()
+    {
+        
+        reloadSlider.value = currentDelay;
+        currentDelay -= Time.deltaTime;
+        //Resetting everything
+        if (currentDelay <= 0)
+        {
+            isReloading = false;
+            ammoAnimator.SetTrigger("Ammo7");
+            magazine.enabled = true;
+            //magazine.isVisible = false;
+            
+            ammoCount = 7;
+        }
+    }
 
     private void FixedUpdate()
     {

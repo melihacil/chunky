@@ -868,7 +868,9 @@ MonoBehaviour:
   gunShot: {fileID: 0}
   source: {fileID: 1271855508}
   brass: {fileID: 3940521217626947536, guid: c24bb6f98090ad44f977a8de3071a16c, type: 3}
+  reloadSlider: {fileID: 0}
   ammoAnimator: {fileID: 718970034}
+  reloadDelay: 0
 --- !u!95 &1271855505
 Animator:
   serializedVersion: 4
@@ -1132,7 +1134,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1383559118}
   m_FillRect: {fileID: 620772114}
   m_HandleRect: {fileID: 0}
