@@ -41,12 +41,14 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
     void Start()
     {
         
     }
 
+    private bool verticalDirection = false;
 
     //Need to add roll 
     //Bullets
@@ -55,11 +57,34 @@ public class PlayerMovement : MonoBehaviour
     //PowerUps
     //Health system with donuts or other food
     //Health will decrease with time so you'll need to eat food and avoid or kill enemies
-    // Update is called once per frame
     void Update()
     {
         inputH = Input.GetAxisRaw("Horizontal");
         inputV = Input.GetAxisRaw("Vertical");
+
+
+
+        //Animation states
+
+        if (inputV > 0)
+        {
+            verticalDirection = true;
+            animator.SetTrigger("WalkUp");
+        }
+        else if (inputV < 0)
+        {
+            verticalDirection = false;
+            animator.SetTrigger("WalkDown");
+        }
+        else
+        {
+            if (verticalDirection)
+                animator.SetTrigger("IdleUp");
+            else
+                animator.SetTrigger("IdleDown");
+        }
+        //Debug.Log(rb.velocity.y);
+        //Debug.Log(rb.velocity.y);
 
         //Debug.Log(rb.velocity);
     }
@@ -88,6 +113,13 @@ public class PlayerMovement : MonoBehaviour
         speedV = Mathf.Pow(Mathf.Abs(speedDifferenceV) * accelerationRateV, velocityPow) * Mathf.Sign(speedDifferenceV);
 
         rb.AddForce(Vector2.up * speedV);
+
+
+
+        if (speedV > 0)
+            animator.SetTrigger("WalkUp");
+        else if (speedV < 0)
+            animator.SetTrigger("WalkDown");
     }
 
     private void MoveHorizontal()
