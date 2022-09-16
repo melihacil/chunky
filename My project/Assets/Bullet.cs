@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
         if (!shot)
         {
             shot = true;
-            Invoke(nameof(DestroyBullet), 4f);
+            //Invoke(nameof(DestroyBullet), 4f);
             Vector3 camPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             rb.AddForce((camPos - transform.position) * 10, ForceMode2D.Impulse);
         }
@@ -28,6 +28,7 @@ public class Bullet : MonoBehaviour
         if(collision.collider.gameObject.layer == 9)
         {
             Debug.Log("Hit Enemy");
+            DestroyBullet();
         }
     }
 
