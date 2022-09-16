@@ -17,6 +17,7 @@ public class GunScript : MonoBehaviour
     [SerializeField] private SpriteRenderer magazine;
     [SerializeField] private Animator ammoAnimator;
     [SerializeField] private float reloadDelay;
+    [SerializeField] private GameObject bullet;
     private float currentDelay;
     private bool isReloading;
     private bool reloadInput;
@@ -52,6 +53,7 @@ public class GunScript : MonoBehaviour
             {
                 ammoAnimator.SetTrigger("Ammo" + ammoCount);
                 Instantiate(brass, transform.position, Quaternion.identity);
+                Instantiate(bullet, transform.position, Quaternion.identity);
                 GetComponent<Animator>().SetTrigger("Shoot");
                 source.Play();
             }              
