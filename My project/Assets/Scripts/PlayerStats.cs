@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     [SerializeField] private float health;
+    private float maxHealth;
     [SerializeField] private float damageVal;
 
 
@@ -16,6 +17,7 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxHealth = health;
         healthBar.maxValue = health;
         healthBar.value = health;
 
@@ -31,6 +33,15 @@ public class PlayerStats : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Died");
+        }
+    }
+
+    public void AddHealth(float value)
+    {
+        health += value;
+        if(health > maxHealth)
+        {
+            health = maxHealth;
         }
     }
 }

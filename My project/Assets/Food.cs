@@ -7,13 +7,21 @@ public class Food : MonoBehaviour
 
 
     [SerializeField] private float healthVal;
+    [SerializeField] private float radius;
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Update()
     {
-        if (collision.collider.gameObject.layer == 10)
+        Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, radius);
+
+        foreach(Collider2D collision in collisions)
         {
-            collision.gameObject.GetComponent<PlayerStats>();
+            if (collision.gameObject.layer == 10)
+            {
+                collision.gameObject.GetComponent<PlayerStats>().AddHealth(healthVal);
+                Destroy(gameObject);
+            }
         }
+        
     }
+
 }
