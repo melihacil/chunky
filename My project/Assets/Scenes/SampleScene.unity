@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 34585641}
   - component: {fileID: 34585643}
   m_Layer: 10
-  m_Name: ChunkyWithAnimations_0
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1582,8 +1582,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 34585640}
   sightRange: 5
-  moveSpeed: 1
-  projectile: {fileID: 0}
+  moveSpeed: 0.01
+  projectile: {fileID: 1237690792}
 --- !u!1 &1969659965
 GameObject:
   m_ObjectHideFlags: 0

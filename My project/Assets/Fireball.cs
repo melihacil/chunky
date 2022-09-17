@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    private Rigidbody2D rb;
+
+    private Transform player;
+    private bool isShot;
+
+    [SerializeField] private float fireBallForce;
+
+    private void Awake()
     {
-        
+        player = FindObjectOfType<PlayerMovement>().gameObject.transform;
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void FixedUpdate()
     {
-        
+        if (!isShot)
+        {
+            isShot = true;
+
+            rb.AddForce(player.position - transform.position * fireBallForce, ForceMode2D.Impulse);
+        }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
+
 }

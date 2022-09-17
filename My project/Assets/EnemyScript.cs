@@ -9,7 +9,9 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private float sightRange;
     [SerializeField] private float moveSpeed;
     [SerializeField] private GameObject projectile;
+    [SerializeField] private float attackSpeed;
 
+    private float currentTime;
 
     private Rigidbody2D rb;
     Vector2 distance;
@@ -27,6 +29,12 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        currentTime -= Time.deltaTime;
+        if (currentTime <= 0)
+            Attack();
+
+
         distance = transform.position - playerTransform.position;
         if (distance.magnitude <= sightRange)
         {
@@ -34,4 +42,12 @@ public class EnemyScript : MonoBehaviour
             rb.MovePosition(playerTransform.position);
         }
     }
+
+
+    void Attack()
+    {
+        currentTime = attackSpeed;
+        Instantiate(projectile,transform.position,Quaternion.identity);
+    }
+
 }
