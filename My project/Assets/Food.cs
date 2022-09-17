@@ -11,9 +11,9 @@ public class Food : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.gameObject.layer == 9)
+        if (collision.collider.gameObject.layer == 10)
         {
-
+            collision.gameObject.GetComponent<PlayerStats>();
         }
     }
 }
