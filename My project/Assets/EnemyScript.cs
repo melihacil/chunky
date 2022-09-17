@@ -8,6 +8,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float sightRange;
     [SerializeField] private float moveSpeed;
+    [SerializeField] private GameObject projectile;
 
 
     private Rigidbody2D rb;
