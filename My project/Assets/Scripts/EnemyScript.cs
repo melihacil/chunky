@@ -11,7 +11,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private float attackSpeed;
 
-    private float currentTime;
+    private float currentTime = 0.2f;
 
     private Rigidbody2D rb;
     Vector2 distance;
