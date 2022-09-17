@@ -25,7 +25,12 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
          health -= damageVal * Time.deltaTime;
-        Debug.Log(health);
+        
         healthBar.value = health;
+
+        if (health <= 0)
+        {
+            Debug.Log("Died");
+        }
     }
 }
