@@ -14,7 +14,7 @@ public class ObjectSpawner : MonoBehaviour
     private float minZ;
     private float maxZ;
 
-    private bool didSpawnFood;
+    private bool didSpawnFood = false;
     private bool didSpawnEnemy;
 
 
@@ -34,15 +34,17 @@ public class ObjectSpawner : MonoBehaviour
 
     private void Update()
     {
-          
-        if(!didSpawnEnemy)
+
+        if (!didSpawnEnemy)
         {
-            didSpawnFood = true;
+            //didSpawnFood = true;
         }
 
         if(!didSpawnFood)
         {
+            Debug.Log("Spawning-1");
             didSpawnFood = true;
+            //Debug.Log("Spawning-1");
             Invoke(nameof(SpawnFood), 3f);
         }
     }
@@ -55,6 +57,7 @@ public class ObjectSpawner : MonoBehaviour
     {
         bool checking = true;
         Vector3 randomPos = new Vector3(0,0,0);
+        Debug.Log("Spawning");
         while (checking)
         {
             randomPos = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
