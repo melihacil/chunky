@@ -68,6 +68,20 @@ public class ObjectSpawner : MonoBehaviour
         //Invoke()
         ResetSpawn();
     }
+    private void SpawnEnemy()
+    {
+        bool checking = true;
+        Vector3 randomPos = new Vector3(0,0,0);
+        Debug.Log("Spawning Enemy");
+        while (checking)
+        {
+            randomPos = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
+            checking = CheckingMeasures(randomPos);
+        }
+        Debug.Log(randomPos);
+        RandomSpawn(spawnEnemy,randomPos);
+        ResetSpawn();
+    }
 
     private bool CheckingMeasures(Vector3 pos)
     {
