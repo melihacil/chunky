@@ -5025,7 +5025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329419781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0792643, y: 0.095729426, z: -0.030726798}
+  m_LocalPosition: {x: -3.42, y: 0.79, z: -0.030726798}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5044,6 +5044,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2379d4c6d65ec640a8c1e7f5927cf3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pos1: {fileID: 1802924421}
+  pos2: {fileID: 940057094}
+  checkingRadius: 1
+  spawnFood: {fileID: 1398847062238325225, guid: b73d05f4e2b77b7468de5ab9fccbd6dd, type: 3}
+  spawnEnemy: {fileID: 0}
 --- !u!1 &1345624892
 GameObject:
   m_ObjectHideFlags: 0
