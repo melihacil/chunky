@@ -44,6 +44,12 @@ TagManager:
   - name: Food
     uniqueID: 149103957
     locked: 0
+  - name: Projectile
+    uniqueID: 4116499809
+    locked: 0
+  - name: Characters
+    uniqueID: 377078497
+    locked: 0
   - name: UI
     uniqueID: 3424368893
     locked: 0
