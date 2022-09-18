@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Food
+    uniqueID: 149103957
+    locked: 0
   - name: UI
     uniqueID: 3424368893
     locked: 0
