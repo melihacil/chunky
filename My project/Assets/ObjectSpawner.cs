@@ -9,6 +9,10 @@ public class ObjectSpawner : MonoBehaviour
     private bool didSpawnFood;
     private bool didSpawnEnemy;
 
+
+    [SerializeField] private GameObject spawnFood;
+    [SerializeField] private GameObject spawnEnemy;
+
     private void Update()
     {
           
@@ -20,6 +24,13 @@ public class ObjectSpawner : MonoBehaviour
         if(!didSpawnFood)
         {
             didSpawnFood = true;
+            Invoke()
         }
+    }
+
+
+    private void RandomSpawn(GameObject obj)
+    {
+
     }
 }
