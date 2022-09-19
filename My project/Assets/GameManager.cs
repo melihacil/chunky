@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
+        //Time.timeScale = 1.0f;
         SceneManager.LoadScene(1);
         FindObjectOfType<SoundManager>().PlaySource(0);
     }

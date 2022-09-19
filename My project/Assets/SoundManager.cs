@@ -12,6 +12,10 @@ public class SoundManager : MonoBehaviour
         //soundSources = new AudioSource[soundLength];
     }
 
+    public void StopPlaying()
+    {
+        FindObjectOfType<AudioSource>().Stop();
+    }
 
     public void PlaySource(int index)
     {
@@ -19,6 +23,7 @@ public class SoundManager : MonoBehaviour
         AudioSource audioSource = newSoundObject.AddComponent<AudioSource>();
         audioSource.volume = 0.2f;
         audioSource.clip = soundObjects[index].GetComponent<AudioSource>().clip;
+        audioSource.loop = true;
         audioSource.Play();
     }
 

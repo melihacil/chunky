@@ -38,7 +38,7 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetButtonDown("Escape"))
+        if (Input.GetButtonDown("Cancel"))
         {
             ResumePanel.SetActive(true);
             PauseLevel();
@@ -59,20 +59,26 @@ public class PlayerStats : MonoBehaviour
             PauseLevel();
             ResumePanel.SetActive(false);
             DeathPanel.SetActive(true);
+            //FindObjectOfType
             Debug.Log("Died");
         }
     }
 
-
+    public void ResetLevel()
+    {
+        Time.timeScale = 1f;
+        FindObjectOfType<GameManager>().NextLevel();
+    }
 
     public void PauseLevel()
     {
-        ResumePanel?.SetActive(false);
+        //ResumePanel?.SetActive(false);
         Time.timeScale = 0f;
     }
 
     public void ResumeLevel()
     {
+        ResumePanel?.SetActive(false);
         Time.timeScale = 1f;
     }
 

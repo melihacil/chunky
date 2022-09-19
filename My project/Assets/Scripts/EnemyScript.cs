@@ -69,7 +69,7 @@ public class EnemyScript : MonoBehaviour
             }
         }
         
-        if (distance.magnitude <= sightRange)
+        if (distance.magnitude <= sightRange && Time.timeScale > 0)
         {
             transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, moveSpeed);
             rb.MovePosition(playerTransform.position);
