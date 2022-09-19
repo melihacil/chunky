@@ -72,7 +72,7 @@ public class ObjectSpawner : MonoBehaviour
         }
         Debug.Log(randomPos);
 
-        if(Random.Range(0,2) > 1)
+        if(Random.Range(0,10) > 6)
             RandomSpawn(spawnFood,randomPos);
         else
             RandomSpawn(spawnFood_2, randomPos);

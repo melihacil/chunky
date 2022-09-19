@@ -5298,13 +5298,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 34585640}
     - target: {fileID: 307785611400138159, guid: e4b7638ca343daa4a8a5e52b41fe98c1, type: 3}
+      propertyPath: spawnFood
+      value: 
+      objectReference: {fileID: 8574164535139743477, guid: ac73f0b8fbc97f748a79f6c2c56a9a56, type: 3}
+    - target: {fileID: 307785611400138159, guid: e4b7638ca343daa4a8a5e52b41fe98c1, type: 3}
       propertyPath: spawnEnemy
       value: 
       objectReference: {fileID: 1205552356742903127, guid: 95f1d5f1da14c7d40b0f0b8f824fbd60, type: 3}
     - target: {fileID: 307785611400138159, guid: e4b7638ca343daa4a8a5e52b41fe98c1, type: 3}
       propertyPath: spawnFood_2
       value: 
-      objectReference: {fileID: 8574164535139743477, guid: ac73f0b8fbc97f748a79f6c2c56a9a56, type: 3}
+      objectReference: {fileID: 1398847062238325225, guid: b73d05f4e2b77b7468de5ab9fccbd6dd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4b7638ca343daa4a8a5e52b41fe98c1, type: 3}
 --- !u!1001 &1205552357861918480
@@ -5526,9 +5530,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1383559117}
     - target: {fileID: 8862472630536434771, guid: 8022ca3b0d345b648a288380abb7709b, type: 3}
+      propertyPath: damageVal
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8862472630536434771, guid: 8022ca3b0d345b648a288380abb7709b, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1345624894}
+    - target: {fileID: 8862472630536434771, guid: 8022ca3b0d345b648a288380abb7709b, type: 3}
+      propertyPath: maxDamage
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8862472630536434771, guid: 8022ca3b0d345b648a288380abb7709b, type: 3}
+      propertyPath: damageUpTimer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8862472630536434773, guid: 8022ca3b0d345b648a288380abb7709b, type: 3}
       propertyPath: knockbackForce
       value: 5
