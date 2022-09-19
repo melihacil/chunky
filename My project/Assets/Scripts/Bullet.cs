@@ -28,6 +28,7 @@ public class Bullet : MonoBehaviour
         if(collision.collider.gameObject.layer == 9)
         {
             Debug.Log("Hit Enemy");
+            collision.gameObject.GetComponent<EnemyStats>().DamageHealth(20);
             DestroyBullet();
         }
     }

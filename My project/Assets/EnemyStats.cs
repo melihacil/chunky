@@ -24,5 +24,7 @@ public class EnemyStats : MonoBehaviour
     {
          health -= damage;
         healthSlider.value -= damage;
+        if(health <= 0)
+            Destroy(gameObject);
     }
 }
