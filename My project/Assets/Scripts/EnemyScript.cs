@@ -13,7 +13,7 @@ public class EnemyScript : MonoBehaviour
 
     private float currentTime = 0.2f;
 
-    private bool enemyForward = false;
+    private bool enemyForward = true;
     private bool playerSide = false;
 
     private Rigidbody2D rb;
