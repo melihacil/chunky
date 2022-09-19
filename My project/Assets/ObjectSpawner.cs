@@ -33,6 +33,10 @@ public class ObjectSpawner : MonoBehaviour
     private bool didSpawnFood = false;
     private bool didSpawnEnemy;
 
+    private void Awake()
+    {
+        FindObjectOfType<SoundManager>().PlaySource(0);
+    }
     private void Start()
     {
         minX = pos1.position.x;
@@ -99,6 +103,7 @@ public class ObjectSpawner : MonoBehaviour
         bool checking = true;
         Vector3 randomPos = new Vector3(0,0,0);
         Debug.Log("Spawning Enemy");
+        randomPos = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
         while (checking && ((randomPos - playerPos.position).magnitude < range))
         {
             randomPos = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));

@@ -17,6 +17,7 @@ public class SoundManager : MonoBehaviour
     {
         GameObject newSoundObject = new GameObject("Sound");
         AudioSource audioSource = newSoundObject.AddComponent<AudioSource>();
+        audioSource.volume = 0.2f;
         audioSource.clip = soundObjects[index].GetComponent<AudioSource>().clip;
         audioSource.Play();
     }

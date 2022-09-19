@@ -11,12 +11,20 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float damageVal;
     [SerializeField] private float maxDamage;
 
+    [SerializeField] private GameObject DeathPanel;
+    [SerializeField] private GameObject ResumePanel;
 
     [SerializeField] private Slider healthBar;
 
     [SerializeField] private float damageUpTimer;
     private float resetTimer;
 
+
+    private void Awake()
+    {
+        DeathPanel.SetActive(false);
+        ResumePanel.SetActive(false);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +37,13 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetButtonDown("Escape"))
+        {
+            ResumePanel.SetActive(true);
+            PauseLevel();
+        }
+
         damageUpTimer -= Time.deltaTime;
         if (damageUpTimer <= 0 && damageVal < maxDamage)
         {
@@ -41,9 +56,27 @@ public class PlayerStats : MonoBehaviour
 
         if (health <= 0)
         {
+            PauseLevel();
+            ResumePanel.SetActive(false);
+            DeathPanel.SetActive(true);
             Debug.Log("Died");
         }
     }
+
+
+
+    public void PauseLevel()
+    {
+        ResumePanel?.SetActive(false);
+        Time.timeScale = 0f;
+    }
+
+    public void ResumeLevel()
+    {
+        Time.timeScale = 1f;
+    }
+
+
 
     public void AddHealth(float value)
     {
