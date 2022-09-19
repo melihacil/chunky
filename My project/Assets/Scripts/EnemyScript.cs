@@ -13,6 +13,9 @@ public class EnemyScript : MonoBehaviour
 
     private float currentTime = 0.2f;
 
+    private bool enemyForward = false;
+    private bool playerSide = false;
+
     private Rigidbody2D rb;
     Vector2 distance;
 
@@ -45,6 +48,27 @@ public class EnemyScript : MonoBehaviour
 
 
         distance = transform.position - playerTransform.position;
+        //turn block
+        //starts with false (looking right)
+        playerSide = distance.x < 0;
+        if (playerSide)
+        {
+            if (playerSide != enemyForward) { 
+            
+                enemyForward = playerSide;
+                transform.forward *= -1;
+            }
+        }
+        else
+        {
+            if (playerSide != enemyForward)
+            {
+
+                enemyForward = playerSide;
+                transform.forward *= -1;
+            }
+        }
+        
         if (distance.magnitude <= sightRange)
         {
             transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, moveSpeed);

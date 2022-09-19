@@ -26,9 +26,15 @@ public class Fireball : MonoBehaviour
             isShot = true;
 
             rb.AddForce(player.position - transform.position * fireBallForce, ForceMode2D.Impulse);
+            Invoke(nameof(DestroyFireball), 5f);
         }
     }
 
+
+    private void DestroyFireball()
+    {
+        Destroy(gameObject);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
