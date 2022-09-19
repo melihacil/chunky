@@ -84,7 +84,7 @@ public class ObjectSpawner : MonoBehaviour
         bool checking = true;
         Vector3 randomPos = new Vector3(0,0,0);
         Debug.Log("Spawning Enemy");
-        while (checking && ((randomPos - playerPos.position).magnitude > range))
+        while (checking && ((randomPos - playerPos.position).magnitude < range))
         {
             randomPos = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
             checking = CheckingMeasures(randomPos);

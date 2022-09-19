@@ -19,11 +19,20 @@ public class EnemyScript : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        playerTransform = FindObjectOfType<PlayerMovement>().gameObject.transform;
     }
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 10)
+        {
+            collision.gameObject.GetComponent<PlayerMovement>().AddKnockBack(transform.position);
+        }
     }
 
     // Update is called once per frame

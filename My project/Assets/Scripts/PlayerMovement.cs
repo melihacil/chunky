@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float velocityPow;
     [SerializeField] private float speedH;
     [SerializeField] private float speedV;
+    [SerializeField] private float knockbackForce;
     //[Header("Movement Horizontal")]
 
     [Header("Animator")]
@@ -133,6 +134,10 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public void AddKnockBack(Vector3 position)
+    {
+        rb.AddForce(position - transform.position * knockbackForce, ForceMode2D.Impulse);
+    }
     private void MoveHorizontal()
     {
         targetSpeedH = inputH * maxSpeed;

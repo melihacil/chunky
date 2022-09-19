@@ -123,8 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbadbffdfe1e83341836249997530c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 8862472630536434775, guid: 8022ca3b0d345b648a288380abb7709b, type: 3}
-  sightRange: 5
+  playerTransform: {fileID: 0}
+  sightRange: 12
   moveSpeed: 0.005
   projectile: {fileID: 3277204917929688671, guid: c9be358c41f1d8d4388e985bb9c2adfd, type: 3}
   attackSpeed: 2
