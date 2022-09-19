@@ -23,7 +23,12 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField] private GameObject spawnFood_2;
     [SerializeField] private GameObject spawnEnemy;
 
-
+    [Header("Timers")]
+    [SerializeField] private float foodSpawnTime;
+    [SerializeField] private float minFoodTimer;
+    [SerializeField] private float enemySpawnTime;
+    [SerializeField] private float minEnemyTimer;
+    [SerializeField] private float reduceTimers;
     //Bools
     private bool didSpawnFood = false;
     private bool didSpawnEnemy;
@@ -45,14 +50,20 @@ public class ObjectSpawner : MonoBehaviour
         {
             Debug.Log("Spawning enemy");
             didSpawnEnemy = true;
-            Invoke(nameof(SpawnEnemy), 3f);
+            Invoke(nameof(SpawnEnemy), enemySpawnTime);
+            enemySpawnTime -= reduceTimers;
+            if (enemySpawnTime < minEnemyTimer)
+                enemySpawnTime = minEnemyTimer;
         }
 
         if(!didSpawnFood)
         {
             Debug.Log("Spawning food");
             didSpawnFood = true;
-            Invoke(nameof(SpawnFood), 5f);
+            Invoke(nameof(SpawnFood), foodSpawnTime);
+            foodSpawnTime -= reduceTimers;
+            if (foodSpawnTime < minFoodTimer)
+                foodSpawnTime = minFoodTimer;
         }
     }
 
