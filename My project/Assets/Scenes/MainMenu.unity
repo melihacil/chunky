@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 108767190}
+  - component: {fileID: 108767191}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -154,6 +155,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &108767191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108767189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a77e67348b6eb74b9143d1cb1e96f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &126163590
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +385,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 159550574}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 108767191}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ExitApp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &159550574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,9 +752,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5358cc9a2185fda4aa9da4f8d2255c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundSources:
-  - {fileID: 8598356618916100541, guid: 9c1c99359a2e0944484b40426d5b57bc, type: 3}
-  - {fileID: 0}
+  soundObjects:
+  - {fileID: 504439738913237327, guid: 019ff3b6e83f1374798764a428023b96, type: 3}
+  - {fileID: 504439738913237327, guid: 9c1c99359a2e0944484b40426d5b57bc, type: 3}
 --- !u!4 &639143860
 Transform:
   m_ObjectHideFlags: 0
@@ -1143,7 +1168,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1721840269}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 108767191}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: NextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1721840269
 MonoBehaviour:
   m_ObjectHideFlags: 0

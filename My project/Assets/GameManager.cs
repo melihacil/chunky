@@ -11,10 +11,14 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        FindObjectOfType<SoundManager>().PlaySource(0);
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+            FindObjectOfType<SoundManager>().PlaySource(1);
     }
 
-
+    public void Soudn()
+    {
+        
+    }
     public void ResetLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -24,6 +28,13 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+        FindObjectOfType<SoundManager>().PlaySource(1);
+    }
+
 
     public void ExitApp()
     {
