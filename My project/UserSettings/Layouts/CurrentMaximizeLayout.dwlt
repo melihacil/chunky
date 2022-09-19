@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 19761
+  controlID: 25007
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 19762
+  controlID: 25008
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 19763
+  controlID: 25009
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,9 +224,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 2eb7feff
-      m_LastClickedID: -84178
-      m_ExpandedIDs: 36affeffaab1feff2cb6feffd6b6feff2eb7feff6eb7feffc6b2ffff18ceffff22fbffff2afbffff925f0000a65f00003c600000
+      m_SelectedIDs: beb40000
+      m_LastClickedID: 46270
+      m_ExpandedIDs: 422bfeff7c2bfeff5a2dfeff6c2dfeff483cfeff9642feffdc43feffc444feff0c45fefff846feff0647feff005afeff625efeff225ffeff3e5ffeff6667feff5468feff1486feffae99feffe4acfeff00adfeffe2adfeff5aaefeff86b2feff2cb5feffc0b8feff9cb9feff0ebafeffb8bafeff80c9feffcad6feffe2e0feffc8e1feff24e3feffa402ffff92cdffffaecdffff2afbfffff4ffffff746000007c6000003c8b0000788e00008c8e0000e88e00004c8f00007e9b0000929b000086a000009aa0000076aa000076ae0000f0ae0000f8ae000022af0000beb40000f4b400008cb50000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -407,12 +407,12 @@ MonoBehaviour:
       layout: 4
     - dockPosition: 1
       containerId: overlay-container--right
-      floating: 0
+      floating: 1
       collapsed: 0
-      displayed: 0
-      snapOffset: {x: 0, y: 0}
+      displayed: 1
+      snapOffset: {x: -240, y: -122}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
+      snapCorner: 3
       id: Scene View/Camera
       index: 1
       layout: 4
@@ -525,9 +525,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 541.92975, y: 227.10815, z: 3.5562334}
+    m_Target: {x: -2.1375394, y: 1.2597332, z: -8.38841}
     speed: 2
-    m_Value: {x: 541.92975, y: 227.10815, z: 3.5562334}
+    m_Value: {x: -2.1375394, y: 1.2597332, z: -8.38841}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -578,9 +578,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 191.93175
+    m_Target: 8.819347
     speed: 2
-    m_Value: 191.93175
+    m_Value: 8.819347
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -637,6 +637,7 @@ MonoBehaviour:
     m_KeySerializationHelper:
     - {fileID: 4777692174322977369, guid: eee71e3cb726992449d397dde04b2ba8, type: 2}
     - {fileID: -8931468384332874319, guid: a97642ec111b95a49b32f8c33af2be13, type: 2}
+    - {fileID: 5121325800290425147, guid: 4e14cf7a201a1fb4bb7f15281b0417d3, type: 2}
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
@@ -670,10 +671,26 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: a97642ec111b95a49b32f8c33af2be13, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 4e14cf7a201a1fb4bb7f15281b0417d3, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -8931468384332874319, guid: a97642ec111b95a49b32f8c33af2be13, type: 2}
+  - m_Target: {fileID: 5121325800290425147, guid: 4e14cf7a201a1fb4bb7f15281b0417d3, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -754,22 +771,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/TextMesh Pro/Fonts
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/TextMesh Pro/Fonts
+  - Assets/Scenes
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\Melih\Documents\GitHub\chunky\My project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 30a10000
-    m_LastClickedID: 41264
-    m_ExpandedIDs: 000000000c6200002ca1000000ca9a3bffffff7f
+    m_SelectedIDs: ac610000
+    m_LastClickedID: 25004
+    m_ExpandedIDs: 000000009061000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -797,7 +814,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000c62000000ca9a3bffffff7f
+    m_ExpandedIDs: 000000009061000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -822,8 +839,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 2eb7feff
-    m_LastClickedInstanceID: -84178
+    m_SelectedInstanceIDs: beb40000
+    m_LastClickedInstanceID: 46270
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000426000000826000076770000ec5f0000186000001a60000022600000c2610000de7c000014260000
     m_RenameOverlay:

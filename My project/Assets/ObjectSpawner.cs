@@ -36,6 +36,8 @@ public class ObjectSpawner : MonoBehaviour
     private void Awake()
     {
         FindObjectOfType<SoundManager>().PlaySource(0);
+        Time.timeScale = 0f;
+        Time.timeScale = 1f;
     }
     private void Start()
     {
