@@ -69,7 +69,7 @@ public class ObjectSpawner : MonoBehaviour
         Debug.Log(randomPos);
         RandomSpawn(spawnFood,randomPos);
         //Invoke()
-        ResetSpawn();
+        didSpawnEnemy=false;
     }
     private void SpawnEnemy()
     {
