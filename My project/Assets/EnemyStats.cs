@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyStats : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Health Attributes")]
+    [SerializeField] private float maxHealth;
+    private float health;
+
+    [SerializeField] private Slider healthSlider;
+
+
+
+    private void Start()
     {
-        
+        health = maxHealth;
+        healthSlider.maxValue = health;
+        healthSlider.value = health;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DamageHealth(float damage)
     {
-        
+         health -= damage;
+        healthSlider.value -= damage;
     }
 }
