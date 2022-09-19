@@ -5291,7 +5291,7 @@ PrefabInstance:
       objectReference: {fileID: 940057094}
     - target: {fileID: 307785611400138159, guid: e4b7638ca343daa4a8a5e52b41fe98c1, type: 3}
       propertyPath: range
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 307785611400138159, guid: e4b7638ca343daa4a8a5e52b41fe98c1, type: 3}
       propertyPath: playerPos
@@ -5529,6 +5529,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1345624894}
+    - target: {fileID: 8862472630536434773, guid: 8022ca3b0d345b648a288380abb7709b, type: 3}
+      propertyPath: knockbackForce
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8862472630536434775, guid: 8022ca3b0d345b648a288380abb7709b, type: 3}
       propertyPath: m_RootOrder
       value: 1
