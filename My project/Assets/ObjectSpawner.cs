@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
 {
+    [Header("Positions and Valus")]
     [SerializeField] private Transform pos1;
     [SerializeField] private Transform pos2;
     [SerializeField] private float checkingRadius;
@@ -16,13 +17,16 @@ public class ObjectSpawner : MonoBehaviour
     private float minZ;
     private float maxZ;
 
-    private bool didSpawnFood = false;
-    private bool didSpawnEnemy;
 
-
+    [Header("GameObjects")]
     [SerializeField] private GameObject spawnFood;
+    [SerializeField] private GameObject spawnFood_2;
     [SerializeField] private GameObject spawnEnemy;
 
+
+    //Bools
+    private bool didSpawnFood = false;
+    private bool didSpawnEnemy;
 
     private void Start()
     {
@@ -67,9 +71,13 @@ public class ObjectSpawner : MonoBehaviour
             checking = CheckingMeasures(randomPos);
         }
         Debug.Log(randomPos);
-        RandomSpawn(spawnFood,randomPos);
+
+        if(Random.Range(0,2) > 1)
+            RandomSpawn(spawnFood,randomPos);
+        else
+            RandomSpawn(spawnFood_2, randomPos);
         //Invoke()
-        didSpawnEnemy=false;
+        didSpawnEnemy =false;
     }
     private void SpawnEnemy()
     {
