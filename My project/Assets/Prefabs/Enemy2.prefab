@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
-  sightRange: 12
+  sightRange: 25
   moveSpeed: 0.005
   projectile: {fileID: 3277204917929688671, guid: c9be358c41f1d8d4388e985bb9c2adfd, type: 3}
   attackSpeed: 2
