@@ -7,6 +7,8 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField] private Transform pos1;
     [SerializeField] private Transform pos2;
     [SerializeField] private float checkingRadius;
+    [SerializeField] private float range;
+    [SerializeField] private Transform playerPos;
     private float minX;
     private float maxX;
     private float minY;
@@ -37,15 +39,16 @@ public class ObjectSpawner : MonoBehaviour
 
         if (!didSpawnEnemy)
         {
-            //didSpawnFood = true;
+            Debug.Log("Spawning enemy");
+            didSpawnEnemy = true;
+            Invoke(nameof(SpawnEnemy), 3f);
         }
 
         if(!didSpawnFood)
         {
-            Debug.Log("Spawning-1");
+            Debug.Log("Spawning food");
             didSpawnFood = true;
-            //Debug.Log("Spawning-1");
-            Invoke(nameof(SpawnFood), 3f);
+            Invoke(nameof(SpawnFood), 5f);
         }
     }
 
@@ -73,7 +76,7 @@ public class ObjectSpawner : MonoBehaviour
         bool checking = true;
         Vector3 randomPos = new Vector3(0,0,0);
         Debug.Log("Spawning Enemy");
-        while (checking)
+        while (checking && ((randomPos - playerPos.position).magnitude > range))
         {
             randomPos = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
             checking = CheckingMeasures(randomPos);
