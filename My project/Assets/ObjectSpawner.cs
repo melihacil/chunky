@@ -41,6 +41,10 @@ public class ObjectSpawner : MonoBehaviour
         maxY = pos2.position.y;
         minZ = pos1.position.z;
         maxZ = pos2.position.z;
+
+
+
+        Instantiate(spawnEnemy, pos1.position, Quaternion.identity);
     }
 
     private void Update()

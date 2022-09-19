@@ -29,14 +29,16 @@ public class Fireball : MonoBehaviour
             Invoke(nameof(DestroyFireball), 5f);
         }
     }
-
-
     private void DestroyFireball()
     {
         Destroy(gameObject);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.layer == 10)
+        {
+            collision.gameObject.GetComponent<PlayerStats>().Damage(5f);
+        }
         Destroy(gameObject);
     }
 

@@ -53,4 +53,13 @@ public class PlayerStats : MonoBehaviour
             health = maxHealth;
         }
     }
+
+    public void Damage(float val)
+    {
+        health -= val;
+        if (health < 0)
+        {
+            Debug.Log("Ded");
+        }
+    }
 }
